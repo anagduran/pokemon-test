@@ -1,0 +1,87 @@
+table {
+    width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+td, th {
+    width: 25%;
+    font-size: 12pt;
+}
+
+.container-table {
+      width: 90%;
+      margin: auto;
+}
+
+.container-images {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+.p-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+    margin-top: 2em;
+}
+
+th.mat-header-cell {
+    font-weight: bold;
+}
+
+.icon-info {
+    cursor: pointer;
+    color: #337AFF;
+}
+
+.info-capitalize {
+    text-transform: capitalize; 
+}
+
+.mobile-label {
+    display: none;
+  }
+
+@media (max-width: 767px){
+    #img-pokemon {
+        width: 80%;
+    }
+
+    .container-images {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .mobile-label {
+        width: 80px;
+        display: inline-block;
+            font-weight: bold;
+      }
+    
+    
+  
+
+
+      .container-table {
+        width: 100%;
+      
+  }
+   
+    
+
+
+  
+}
