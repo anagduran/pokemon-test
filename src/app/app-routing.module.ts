@@ -13,6 +13,12 @@ const routes: Routes = [
         canActivate: [AuthGuard], 
 
   },
+
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
  
 
 ];
