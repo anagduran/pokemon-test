@@ -1,3 +1,17 @@
+
+# LOGIN
+
+correo: prueba@prueba.com
+contraseña: 12345678
+
+
+# OBJETIVO
+
+Se podra ver una lista de todos los pokemones y el detalle de cada uno (fotos, nombre, tipo, experiencia base, estatura y peso).
+
+Se valida formulario de login y  la ruta para no ingresar a ver los pokemones sin haber iniciado sesion.
+
+
 # PokemonTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.

@@ -1,0 +1,14 @@
+.mt-custom {
+    justify-content: space-between;
+}
+
+.span-button:hover{
+    background-color:  #337AFF;
+    color:  #ffff1a;
+    font-weight: bold;
+}
+
+.span-title{
+    font-weight: bold;
+    color: #337AFF;
+}

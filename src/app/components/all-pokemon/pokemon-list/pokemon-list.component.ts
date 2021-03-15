@@ -1,17 +1,22 @@
-import { PokemonDetailComponent } from './../pokemon-detail/pokemon-detail.component';
-import { SharedService } from './../../services/shared.service';
-import { GetAllPokemonService } from './../async/get-all-pokemon.service';
+import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
+import { SharedService } from '../../../services/shared.service';
+import { GetAllPokemonService } from '../async/get-all-pokemon.service';
 import { Component, OnInit, ViewChild, DoCheck } from '@angular/core';
 import {MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort, Sort} from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 export interface pokemonTable {
   id: number,
   name: string,
   action:string,
-  type: string
+  type: string,
+  sprites: any,
+  base_experience: number,
+  height: number,
+  weight: number
 }
 
 @Component({
@@ -38,7 +43,8 @@ export class PokemonListComponent implements OnInit {
 
     private getPokemonS  : GetAllPokemonService,
     private isMobile  : SharedService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -82,6 +88,8 @@ export class PokemonListComponent implements OnInit {
            
             this.getPokemonS.getPokemonDetail(element.url).subscribe(
               response=> {
+
+                console.log(response)
                
                 if(response!=null){
 
@@ -92,7 +100,10 @@ export class PokemonListComponent implements OnInit {
                     name: element.name,
                     type: this.fixedType(response.types),                 
                     action: "info",
-
+                    sprites: response.sprites,
+                    base_experience: response.base_experience,
+                    height: response.height,
+                    weight: response.weight
                     
                   };
                 
@@ -104,6 +115,8 @@ export class PokemonListComponent implements OnInit {
                 }
                 this.dataSource.sort = this.sort;
                 this.filterByColumn();
+              }, error=>{
+                this.toastr.error('Ocurrio un error, intente nuevamente', 'Error')
               });
                 
                
@@ -115,6 +128,8 @@ export class PokemonListComponent implements OnInit {
             
         }
 
+      }, error=>{
+        this.toastr.error('Ocurrio un error, intente nuevamente', 'Error')
       }
      
     )
@@ -122,13 +137,12 @@ export class PokemonListComponent implements OnInit {
   }
 
   fixedType(types){
-    console.log(types)
 
     let fix = [];
     types.forEach((element,index) => {
      
       fix.push(element.type.name)
-      console.log()
+    
     });
 
     return fix.join(",")
@@ -137,8 +151,7 @@ export class PokemonListComponent implements OnInit {
 
   public pokemonDetail(pokemon) {
     const dialogRef = this.dialog.open(PokemonDetailComponent, {
-      width: '75%',
-      panelClass: 'app-full-bleed-dialog',
+     width: '50%',
       data: { pokemon },
     });
 

@@ -1,6 +1,6 @@
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+@import '~ngx-toastr/toastr';
 body {
     font-family: Roboto, Arial, sans-serif;
     margin: 0;

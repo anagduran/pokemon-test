@@ -1,0 +1,77 @@
+
+
+
+<div class="container-welcome">
+    <div class="div-welcome img-welcome">
+        <img src="../../../assets/images/imagen2.jpg" alt="" class="img-pikachu">
+    </div>
+    <div class="div-welcome login-div">
+        <p class="p-title">Bienvenido a la comunidad Pokemon</p>
+        <p class="p-subtitle">Desde aca podras ver todos los Pokemones que existen y sus caracteristicas principales</p>
+        <p class="p-subtitle-two">Inicia sesion con tus credenciales</p>
+
+        <div>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="login-container">
+                    <div class="div-input">
+             
+                         
+                            <mat-form-field class=" w-60" floatLabel="never" appearance="fill">
+                                <mat-label>Correo</mat-label>
+                                <input placeholder="Introduzca el correo" 
+                                matInput 
+                                formControlName="email"   
+                                autocomplete="off" />
+                                <mat-error
+                                class="mat-error-custom"
+                                *ngIf="
+                                  loginForm.controls['email'].invalid &&
+                                  loginForm.controls['email'].touched
+                                "
+                              >
+                                Este campo es obligatorio
+                              </mat-error>
+
+                            </mat-form-field>
+                  
+                    </div>
+
+                    <div class="div-input">
+                   
+                        <mat-form-field class="w-60" floatLabel="never" appearance="fill">
+                            <mat-label>Contraseña</mat-label>
+                            <input
+                                type="password"
+                                matInput
+                                autocomplete="off"
+                                formControlName="password"
+                                maxlength="8"
+                                placeholder="Introduzca la contraseña"
+                            />
+                            <mat-error
+                            class="mat-error-custom"
+                            *ngIf="
+                              loginForm.controls['password'].invalid &&
+                              loginForm.controls['password'].touched
+                            "
+                          >
+                            Este campo es obligatorio
+                          </mat-error>
+
+                        </mat-form-field>
+                   
+                    </div>
+                    
+                    <div>
+                        <button mat-raised-button class="button-login-custom" 
+                        [ngClass]="!loginForm.valid ? 'button-login-custom' : ''"
+                        [disabled]="!loginForm.valid" [disabled]="!loginForm.valid">Iniciar Sesion</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

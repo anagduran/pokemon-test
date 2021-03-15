@@ -1,0 +1,50 @@
+.img-pokemon {
+    width: 25%;
+
+}
+
+.container-img {
+    text-align: center;
+}
+
+.h3-title{
+    text-align: center;
+    font-size: 28pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #337AFF;
+}
+
+.container-data{
+    justify-content: center;
+    display: flex;
+}
+
+.div-info{
+    width: 30%;
+}
+
+.info-title{ 
+    font-weight: bold;
+    text-align: center;
+}
+
+.info-subtitle{ 
+    text-align: center;
+    font-size: 12pt;
+
+}
+
+.container-title{ 
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.close-icon{
+    cursor: pointer;
+}

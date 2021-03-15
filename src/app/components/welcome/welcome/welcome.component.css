@@ -1,0 +1,76 @@
+.container-welcome {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.div-welcome {
+    width: 50%;
+    padding: 20px;
+}
+
+.img-welcome {
+    text-align: end;
+}
+
+.img-pikachu {
+    width: 67%;
+}
+
+.p-title {
+    font-size: 24pt;
+    color: #337AFF;
+    font-weight: bold;
+    line-height: initial;
+
+}
+
+.login-div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.p-subtitle {
+    font-size: 15pt;
+    line-height: 30px;
+}
+
+.p-subtitle-two {
+    font-size: 14pt;
+    text-align: center;
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+.button-login-custom {
+    background-color: #337AFF;
+    color: #ffff1a;
+    font-weight: bold;
+    font-size: 13pt;
+    padding: 5px;
+    width: 50%;
+
+}
+
+
+.login-container {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.w-60{
+    width: 60%;
+
+}
+
+.div-input {
+    padding: 10px;
+}
+
+.mat-error-custom {
+    font-weight: bold;
+}
