@@ -89,7 +89,7 @@ export class PokemonListComponent implements OnInit {
             this.getPokemonS.getPokemonDetail(element.url).subscribe(
               response=> {
 
-                console.log(response)
+   
                
                 if(response!=null){
 

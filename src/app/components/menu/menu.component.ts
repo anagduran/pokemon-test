@@ -13,11 +13,11 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("aui")
+ 
   }
 
   logout(){
-    console.log("aqui")
+
     this.sharedS.logout()
   }
 
