@@ -15,12 +15,10 @@ export class GetAllPokemonService {
 
 
   getPokemons():Observable<any>{
-    let headers = new HttpHeaders().set("Content-type", "application/json");
     return this._http.get(this.url+'?limit=20');
   }
 
   getPokemonDetail(params):Observable<any>{
-    let headers = new HttpHeaders().set("Content-type", "application/json");
     return this._http.get(params);
   }
 
